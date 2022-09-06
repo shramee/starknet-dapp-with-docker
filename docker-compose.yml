@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./src:/code/src
+      - ./build:/code/build
+      - ./run.sh:/code/scripts/run.sh
+    command: sh -c "chmod +x ./scripts/run.sh && ./scripts/run.sh"
+volumes:
+  logvolume01: {}
