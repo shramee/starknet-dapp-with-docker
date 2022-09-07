@@ -1,8 +1,10 @@
 services:
-  web:
+  builder:
     build: .
+    environment:
+      - RUN_SCRIPT=${RUN_SCRIPT:-test}
     ports:
-      - "8000:5000"
+      - "8100:8100"
     volumes:
       - ./src:/code/src
       - ./build:/code/build
