@@ -1,16 +1,21 @@
 #!/bin/sh
+if [ $1 ];
+	then _SCRIPT=$1;
+	else _SCRIPT=$RUN_SCRIPT;
+fi
+
 
 COLOR='\033[0;33m'
 COLOR2='\033[0;31m'
 HORIZONTAL_RULE="${COLOR}\
 ----------------------------------------------------------------------"
 
-echo -e "${COLOR}Running script ${COLOR2}$RUN_SCRIPT"
+echo -e "${COLOR}Running script ${COLOR2}$_SCRIPT"
 echo -e $HORIZONTAL_RULE
 
 # You can call your scripts using `RUN_SCRIPT=script_name docker compose up`
 
-case $RUN_SCRIPT in
+case $_SCRIPT in
 
 # Add your custom scripts here
 	
@@ -39,11 +44,12 @@ case $RUN_SCRIPT in
 		# Can be called after changes with,
 		# RUN_SCRIPT=install docker compose up
 		# 
+		echo "Installation done!";
 	;;
 
 	*)
-		echo "Script '$RUN_SCRIPT' is not defined.";
+		echo "Script '$_SCRIPT' is not defined.";
 esac
 
 echo -e $HORIZONTAL_RULE
-echo -e "${COLOR}Finished running script ${COLOR2}$RUN_SCRIPT"
+echo -e "${COLOR}Finished running script ${COLOR2}$_SCRIPT"

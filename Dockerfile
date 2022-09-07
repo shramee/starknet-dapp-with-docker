@@ -9,5 +9,6 @@ COPY ./run.sh ./scripts/run.sh
 COPY ./src ./src
 RUN chmod +x ./scripts/run.sh
 # Installation
-RUN RUN_SCRIPT=install ./scripts/run.sh
+RUN ./scripts/run.sh install
+
 CMD ./scripts/run.sh
