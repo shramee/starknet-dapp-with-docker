@@ -1,9 +1,10 @@
 #!/bin/sh
+
+MAX_FEE=1600000000000
 if [ $1 ];
 	then _SCRIPT=$1;
 	else _SCRIPT=$RUN_SCRIPT;
 fi
-
 
 HORIZONTAL_RULE="----------------------------------------------------------------------"
 DATE=$(date +'%Y-%m-%dT%H:%M:%S%Z')
@@ -16,13 +17,13 @@ deploy_compiled_contract() {
 		then
 		echo "Declaring class..."
 
-		DECLARED=$(starknet declare --contract ./build/my-contract_compiled.json)
+		DECLARED=$(starknet declare --contract ./build/my-contract_compiled.json --max_fee $MAX_FEE)
 		echo "$DECLARED"
 
 		CLASS_HASH=`echo "$DECLARED" | grep class | sed "s/Contract class hash: //"`
 
 		echo "Deploying contract for class $CLASS_HASH..."
-		DEPLOYED=`starknet deploy --class_hash $CLASS_HASH`
+		DEPLOYED=`starknet deploy --class_hash $CLASS_HASH --max_fee $MAX_FEE`
 
 		echo "$DEPLOYED"
 		else
@@ -51,7 +52,7 @@ case $_SCRIPT in
 		# Run build/test_compiled.json
 		cairo-run \
 		--program=./build/test_compiled.json --print_output \
-		--print_info --relocate_prints
+		--print_info --relocate_prints --layout=small
 	;;
 
 	"contract")

@@ -15,7 +15,6 @@ services:
       - ./.starknet_accounts:/root/.starknet_accounts
       - ./cairo_libs:/code/cairo_libs
       - ./run.sh:/code/scripts/run.sh
-    # command: printenv
     command: sh -c "chmod +x ./scripts/run.sh && ./scripts/run.sh | tee -a ./logs/scripts.log"
 volumes:
   logvolume01: {}
