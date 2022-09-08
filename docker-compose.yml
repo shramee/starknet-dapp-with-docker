@@ -1,16 +1,21 @@
 services:
-  builder:
+  cairo:
+    container_name: cairo
     build: .
     environment:
       - RUN_SCRIPT=${RUN_SCRIPT:-test}
+    env_file:
+      - ./.env
     ports:
       - "8100:8100"
     volumes:
       - ./src:/code/src
       - ./build:/code/build
       - ./logs:/code/logs
+      - ./.starknet_accounts:/root/.starknet_accounts
       - ./cairo_libs:/code/cairo_libs
       - ./run.sh:/code/scripts/run.sh
+    # command: printenv
     command: sh -c "chmod +x ./scripts/run.sh && ./scripts/run.sh | tee -a ./logs/scripts.log"
 volumes:
   logvolume01: {}

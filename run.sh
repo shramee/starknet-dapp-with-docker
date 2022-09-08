@@ -35,7 +35,25 @@ case $_SCRIPT in
 		--print_info --relocate_prints
 	;;
 
+	"contract")
+		starknet-compile ./src/my-contract.cairo \
+		--output ./build/my-contract_compiled.json \
+		--abi ./build/my-contract_abi.json
+	;;
+
+	"contract_declare")
+		starknet declare --contract ./build/my-contract_compiled.json
+	;;
+
+	"contract_deploy")
+		starknet deploy --class_hash 0x68704d18de8ccf71da7c9761ee53efd44dcfcfd512eddfac9c396e7d175e234
+	;;
 # Stop editing, these are default scripts.
+
+	"deploy_account")
+		starknet deploy_account
+	;;
+
 	"install")
 		# Add code here for setup/configuration (like installing packages)
 		# This will be called when building the image
