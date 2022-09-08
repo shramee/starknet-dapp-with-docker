@@ -11,6 +11,25 @@ echo ""
 echo -e "$DATE - Running script $_SCRIPT"
 echo -e $HORIZONTAL_RULE
 
+deploy_compiled_contract() {
+	if [ $1 ]
+		then
+		echo "Declaring class..."
+
+		DECLARED=$(starknet declare --contract ./build/my-contract_compiled.json)
+		echo "$DECLARED"
+
+		CLASS_HASH=`echo "$DECLARED" | grep class | sed "s/Contract class hash: //"`
+
+		echo "Deploying contract for class $CLASS_HASH..."
+		DEPLOYED=`starknet deploy --class_hash $CLASS_HASH`
+
+		echo "$DEPLOYED"
+		else
+		echo "Filename to deploy is a required argument."
+	fi
+}
+
 # You can call your scripts using `RUN_SCRIPT=my_script docker compose up`
 
 case $_SCRIPT in
@@ -41,12 +60,9 @@ case $_SCRIPT in
 		--abi ./build/my-contract_abi.json
 	;;
 
-	"contract_declare")
-		starknet declare --contract ./build/my-contract_compiled.json
-	;;
-
 	"contract_deploy")
-		starknet deploy --class_hash 0x68704d18de8ccf71da7c9761ee53efd44dcfcfd512eddfac9c396e7d175e234
+		# deploy_compiled_contract
+		deploy_compiled_contract ./build/my-contract_compiled.json
 	;;
 # Stop editing, these are default scripts.
 
