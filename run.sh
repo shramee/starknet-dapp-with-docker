@@ -5,21 +5,19 @@ if [ $1 ];
 fi
 
 
-COLOR='\033[0;33m'
-COLOR2='\033[0;31m'
-HORIZONTAL_RULE="${COLOR}\
-----------------------------------------------------------------------"
-
-echo -e "${COLOR}Running script ${COLOR2}$_SCRIPT"
+HORIZONTAL_RULE="----------------------------------------------------------------------"
+DATE=$(date +'%Y-%m-%dT%H:%M:%S%Z')
+echo ""
+echo -e "$DATE - Running script $_SCRIPT"
 echo -e $HORIZONTAL_RULE
 
-# You can call your scripts using `RUN_SCRIPT=script_name docker compose up`
+# You can call your scripts using `RUN_SCRIPT=my_script docker compose up`
 
 case $_SCRIPT in
 
 # Add your custom scripts here
 	
-	"script_name") # This line begins script `script_name`
+	"my_script") # This line begins script `my_script`
 		# Shell commands here
 		echo "This script doesn't do very much at the moment."
 	;; # Don't forget double semicolon `;;` to end script
@@ -52,4 +50,5 @@ case $_SCRIPT in
 esac
 
 echo -e $HORIZONTAL_RULE
-echo -e "${COLOR}Finished running script ${COLOR2}$_SCRIPT"
+echo -e "Finished running script $_SCRIPT"
+echo ""
