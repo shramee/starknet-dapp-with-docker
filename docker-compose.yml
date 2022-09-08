@@ -8,6 +8,7 @@ services:
     volumes:
       - ./src:/code/src
       - ./build:/code/build
+      - ./cairo_libs:/code/cairo_libs
       - ./run.sh:/code/scripts/run.sh
     command: sh -c "chmod +x ./scripts/run.sh && ./scripts/run.sh"
 volumes:
