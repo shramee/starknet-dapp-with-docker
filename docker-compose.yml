@@ -8,8 +8,9 @@ services:
     volumes:
       - ./src:/code/src
       - ./build:/code/build
+      - ./logs:/code/logs
       - ./cairo_libs:/code/cairo_libs
       - ./run.sh:/code/scripts/run.sh
-    command: sh -c "chmod +x ./scripts/run.sh && ./scripts/run.sh"
+    command: sh -c "chmod +x ./scripts/run.sh && ./scripts/run.sh | tee -a ./logs/scripts.log"
 volumes:
   logvolume01: {}
