@@ -5,12 +5,11 @@ if [ $1 ];
 	then _SCRIPT=$1;
 	else _SCRIPT=$RUN_SCRIPT;
 fi
-
+LOG_FILE="./logs/script-$_SCRIPT.log"
 HORIZONTAL_RULE="----------------------------------------------------------------------"
 DATE=$(date +'%Y-%m-%dT%H:%M:%S%Z')
-echo ""
-echo -e "$DATE - Running script $_SCRIPT"
-echo -e $HORIZONTAL_RULE
+
+printf '\n%s\n%s\n' "$DATE - Running script $_SCRIPT" $HORIZONTAL_RULE | tee -a $LOG_FILE
 
 deploy_compiled_contract() {
 	if [ $1 ]
@@ -33,8 +32,6 @@ deploy_compiled_contract() {
 
 # You can call your scripts using `RUN_SCRIPT=my_script docker compose up`
 
-source ./scripts.sh
+source ./scripts.sh | tee -a $LOG_FILE
 
-echo -e $HORIZONTAL_RULE
-echo -e "Finished running script $_SCRIPT"
-echo ""
+printf '%s\n%s\n' $HORIZONTAL_RULE "Finished running script $_SCRIPT" | tee -a $LOG_FILE

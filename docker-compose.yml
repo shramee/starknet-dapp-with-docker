@@ -14,7 +14,8 @@ services:
       - ./logs:/code/logs
       - ./.starknet_accounts:/root/.starknet_accounts
       - ./cairo_libs:/code/cairo_libs
-      - ./scripts.sh:/code/scripts/scripts.sh
-    command: sh -c "chmod +x ./scripts/scripts.sh && ./scripts/run.sh | tee -a ./logs/scripts.log"
+      - ./scripts.sh:/code/scripts.sh
+      - ./run.sh:/code/run.sh
+    command: sh -c "chmod -R +x ./scripts.sh ./run.sh && ./run.sh"
 volumes:
   logvolume01: {}
