@@ -1,4 +1,3 @@
 build/*
 logs/*
-.starknet_accounts/starknet_open_zeppelin_accounts.json
-.starknet_accounts/starknet_open_zeppelin_accounts.json.backup
+.starknet_accounts/*
