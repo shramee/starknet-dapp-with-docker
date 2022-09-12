@@ -1,15 +1,17 @@
 #!/bin/sh
-
 MAX_FEE=1600000000000
+
+# This file runs scripts, this file shouldn't be edited directly.
+# You can add your custom scripts in scripts.sh
+
 if [ $1 ];
-	then _SCRIPT=$1;
-	else _SCRIPT=$RUN_SCRIPT;
+	then RUN_SCRIPT=$1;
 fi
-LOG_FILE="./logs/script-$_SCRIPT.log"
-HORIZONTAL_RULE="----------------------------------------------------------------------"
+LOG_FILE="./logs/script-$RUN_SCRIPT.log"
+HR="----------------------------------------------------------------------"
 DATE=$(date +'%Y-%m-%dT%H:%M:%S%Z')
 
-printf '\n%s\n%s\n' "$DATE - Running script $_SCRIPT" $HORIZONTAL_RULE | tee -a $LOG_FILE
+printf '\n%s\n%s\n' "$DATE - Running script $RUN_SCRIPT" $HR | tee -a $LOG_FILE
 
 deploy_compiled_contract() {
 	if [ $1 ]
@@ -34,4 +36,4 @@ deploy_compiled_contract() {
 
 source ./scripts.sh | tee -a $LOG_FILE
 
-printf '%s\n%s\n' $HORIZONTAL_RULE "Finished running script $_SCRIPT" | tee -a $LOG_FILE
+printf '%s\n%s\n' $HR "Finished running script $RUN_SCRIPT" | tee -a $LOG_FILE

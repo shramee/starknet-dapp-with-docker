@@ -1,5 +1,5 @@
 #!/bin/sh
-case $_SCRIPT in
+case $RUN_SCRIPT in
 # Add your custom scripts here
 	
 	"my_script") # This line begins script `my_script`
@@ -11,26 +11,26 @@ case $_SCRIPT in
 # Here are some example scripts, edit away as you please.
 
 	"test")
-		# Compile src/test.cairo to build/test_compiled.json
-		cairo-compile ./src/test.cairo --output ./build/test_compiled.json
+		# Compile src/test.cairo to build/test.json
+		cairo-compile ./src/test.cairo --output ./build/test.json
 
-		# Run build/test_compiled.json
+		# Run build/test.json
 		cairo-run \
-		--program=./build/test_compiled.json --print_output \
+		--program=./build/test.json --print_output \
 		--print_info --relocate_prints --layout=small
 	;;
 
-	"contract")
+	"contract_compile")
 		starknet-compile ./src/my-contract.cairo \
-		--output ./build/my-contract_compiled.json \
+		--output ./build/my-contract.json \
 		--abi ./build/my-contract_abi.json
 	;;
 
 	"contract_deploy")
-		# deploy_compiled_contract
-		deploy_compiled_contract ./build/my-contract_compiled.json
+		# deploy_compiled_contract is a custom function to declare a class from a file
+		# and then deploy a contract based on the class hash.
+		deploy_compiled_contract ./build/my-contract.json
 	;;
-# Stop editing, these are default scripts.
 
 	"deploy_account")
 		starknet deploy_account
@@ -46,5 +46,5 @@ case $_SCRIPT in
 	;;
 
 	*)
-		echo "Script '$_SCRIPT' is not defined.";
+		echo "Script '$RUN_SCRIPT' is not defined.";
 esac
