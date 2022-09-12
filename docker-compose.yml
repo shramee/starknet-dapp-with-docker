@@ -9,11 +9,15 @@ services:
     ports:
       - "8100:8100"
     volumes:
+      # Code directories
       - ./src:/code/src
+      - ./libs:/code/libs
+      # Builds
       - ./build:/code/build
+      # Logs and config
       - ./logs:/code/logs
       - ./.starknet_accounts:/root/.starknet_accounts
-      - ./cairo_libs:/code/cairo_libs
+      # Scripts
       - ./scripts.sh:/code/scripts.sh
       - ./run.sh:/code/run.sh
     command: sh -c "chmod -R +x ./scripts.sh ./run.sh && ./run.sh"
