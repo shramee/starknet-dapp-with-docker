@@ -1,4 +1,4 @@
-## cairo_libs
+## libs
 
 This directory is added to `CAIRO_PATH`.
 
