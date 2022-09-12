@@ -13,8 +13,8 @@ COPY ./scripts.sh ./scripts.sh
 COPY ./src ./src
 COPY ./logs ./logs
 COPY ./libs ./libs
-RUN chmod -R +x ./scripts
+RUN chmod +x ./scripts.sh ./run.sh
 # Installation
-RUN ./scripts/run.sh install
+RUN ./run.sh install
 
-CMD ./scripts/run.sh
+CMD ./run.sh

@@ -1,6 +1,5 @@
 services:
   cairo:
-    container_name: cairo
     build: .
     environment:
       - RUN_SCRIPT=${RUN_SCRIPT:-test}
