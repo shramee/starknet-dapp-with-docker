@@ -24,7 +24,9 @@ deploy_compiled_contract() {
 		CLASS_HASH=`echo "$DECLARED" | grep class | sed "s/Contract class hash: //"`
 
 		echo "Deploying contract for class $CLASS_HASH..."
-		DEPLOYED=`starknet deploy --class_hash $CLASS_HASH --max_fee $MAX_FEE`
+
+		shift # Shift out the first argument from #@ to pass the rest as input
+		DEPLOYED=`starknet deploy --class_hash $CLASS_HASH --max_fee $MAX_FEE  --inputs "$@"`
 
 		echo "$DEPLOYED"
 		else
