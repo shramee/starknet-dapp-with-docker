@@ -4,6 +4,7 @@ WORKDIR /code
 RUN apk add gmp-dev g++ gcc
 RUN pip3 install ecdsa fastecdsa sympy
 RUN pip3 install cairo-lang
+RUN pip3 install pytest pytest-asyncio
 EXPOSE 8100
 ENV CAIRO_PATH=/code/libs:/tmp/cairo_libs
 ENV STARKNET_NETWORK=alpha-goerli
