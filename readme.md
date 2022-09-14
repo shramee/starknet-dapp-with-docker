@@ -14,20 +14,23 @@ Loosely copies `npm run script` functionality. But the scripts are declared in a
 
 This builds an image and sets up a container with everything you need to run cairo code and deploy starknet contracts.
 
-Then it executed `run.sh` script. And you should also see some output like this,
+Then it executes `run.sh` script. And you should also see some output like this,
 
 ```
-cairo    | 2022-09-12T04:29:52UTC - Running script test
-cairo    | ----------------------------------------------------------------------
-cairo    | Number of steps: 4 (originally, 4)
-cairo    | Used memory cells: 11
-cairo    | Register values after execution:
-cairo    | pc = 12
-cairo    | ap = 12
-cairo    | fp = 12
-cairo    |
-cairo    | ----------------------------------------------------------------------
-cairo    | Finished running script test
+cairo-with-docker-cairo-1  | 2022-09-14T10:48:38UTC - Running script test
+cairo-with-docker-cairo-1  | ----------------------------------------------------------------------
+cairo-with-docker-cairo-1  | ============================= test session starts ==============================
+cairo-with-docker-cairo-1  | platform linux -- Python 3.9.13, pytest-7.1.3, pluggy-1.0.0
+cairo-with-docker-cairo-1  | rootdir: /code
+cairo-with-docker-cairo-1  | plugins: asyncio-0.19.0, web3-5.30.0, typeguard-2.13.3
+cairo-with-docker-cairo-1  | asyncio: mode=strict
+cairo-with-docker-cairo-1  | collected 1 item
+cairo-with-docker-cairo-1  |
+cairo-with-docker-cairo-1  | src/contract_test.py .                                                   [100%]
+...
+...
+cairo-with-docker-cairo-1  | ========================= 1 passed, 1 warning in 2.35s =========================
+cairo-with-docker-cairo-1  | ----------------------------------------------------------------------
 ```
 
 #### Here is what just happened,
@@ -45,20 +48,17 @@ Scripts can be added like a switch case in bash, but we have some default ones. 
 #### test
 
 - `RUN_SCRIPT=test docker-compose up`
-- Compiles and runs the code in `src/test.cairo`.
-- You can use `src/test.cairo` as playground if you like.
+- Runs test in `src/contract_test.py` with `pytest`.
+- Tests can really save you lots of time writing Starknet contracts.
+- With tests you can catch bugs and also fix them, all this while your neighbour is still waiting for his contract to be accepted on L2.
+- Read more about writing tests for Starknet contract,  
+  https://www.cairo-lang.org/docs/hello_starknet/unit_tests.html
 
-#### contract_compile
+#### deploy
 
-- `RUN_SCRIPT=contract_compile docker-compose up`
-- Compiles the contract in `src/my-contract.cairo`.
-- Compiled to file `build/my-contract.json`.
-
-#### contract_deploy
-
-- `RUN_SCRIPT=contract_deploy docker-compose up`
-- Declares the class and deploys the contract from `build/my-contract.json`.
-- You should run this after compiling :wink:
+- `RUN_SCRIPT=deploy docker-compose up`
+- Compiles the contract in `src/contract.cairo` to `build/contract.json`.
+- Declares the contract class and deploys it from `build/contract.json`.
 
 #### deploy_account
 

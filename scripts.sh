@@ -7,29 +7,22 @@ case $RUN_SCRIPT in
 		echo "This script doesn't do very much at the moment."
 	;; # Don't forget double semicolon `;;` to end script
 
-
-# Here are some example scripts, edit away as you please.
+	# Here are some example scripts, edit away as you please.
 
 	"test")
 		# Compile src/test.cairo to build/test.json
-		cairo-compile ./src/test.cairo --output ./build/test.json
-
-		# Run build/test.json
-		cairo-run \
-		--program=./build/test.json --print_output \
-		--print_info --relocate_prints --layout=small
+		pytest ./src/contract_test.py
 	;;
 
-	"contract_compile")
-		starknet-compile ./src/my-contract.cairo \
-		--output ./build/my-contract.json \
-		--abi ./build/my-contract_abi.json
-	;;
+	"deploy")
+		starknet-compile ./src/contract.cairo \
+		--output ./build/contract.json \
+		--abi ./build/contract_abi.json
 
-	"contract_deploy")
-		# deploy_compiled_contract is a custom function to declare a class from a file
-		# and then deploy a contract based on the class hash.
-		deploy_compiled_contract ./build/my-contract.json
+		# deploy_compiled_contract
+		# Declares a class from compiled code and deploys the contract with
+		# trailing arguments passed as input.
+		deploy_compiled_contract ./build/contract.json
 	;;
 
 	"deploy_account")
