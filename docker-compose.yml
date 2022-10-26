@@ -1,24 +1,24 @@
 services:
   cairo:
-    build: .
+    build: ./cairo
     environment:
       - RUN_SCRIPT=${RUN_SCRIPT:-test}
     env_file:
-      - ./.env
+      - ./cairo/.env
     ports:
       - "8100:8100"
     volumes:
       # Code directories
-      - ./src:/code/src
-      - ./libs:/code/libs
+      - ./cairo/src:/code/src
+      - ./cairo/libs:/code/libs
       # Builds
-      - ./build:/code/build
+      - ./cairo/build:/code/build
       # Logs and config
-      - ./logs:/code/logs
-      - ./.starknet_accounts:/root/.starknet_accounts
+      - ./cairo/logs:/code/logs
+      - ./shared/.starknet_accounts:/root/.starknet_accounts
       # Scripts
-      - ./scripts.sh:/code/scripts.sh
-      - ./run.sh:/code/run.sh
+      - ./cairo/scripts.sh:/code/scripts.sh
+      - ./cairo/run.sh:/code/run.sh
     command: sh -c "chmod -R +x ./scripts.sh ./run.sh && ./run.sh"
 volumes:
   logvolume01: {}
