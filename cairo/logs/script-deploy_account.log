@@ -1,0 +1,33 @@
+
+2022-09-10T17:32:05UTC - Running script deploy_account
+----------------------------------------------------------------------
+Sent deploy account contract transaction.
+
+NOTE: This is a modified version of the OpenZeppelin account contract. The signature is computed
+differently.
+
+Contract address: 0x017399f67d4225e360e69d59a85c176884e0d8483a00dfd62bf408f8eecdf783
+Public key: 0x05c62697f155cb32ccb90f013df5b12d90a65f3bff3f017cea20730ccc4179b3
+Transaction hash: 0x7e76e720fbba4775ff0a9292bb2cf7c3b6883ced2bb9fd51a2416f130066c19
+
+----------------------------------------------------------------------
+Finished running script deploy_account
+
+2022-09-10T18:01:31UTC - Running script deploy_account
+----------------------------------------------------------------------
+Sent deploy account contract transaction.
+
+NOTE: This is a modified version of the OpenZeppelin account contract. The signature is computed
+differently.
+
+Contract address: 0x070e1e23753c9dbfb01f1a49dc0a37fedeadf57620792e33ab00049e501816a4
+Public key: 0x04083099ee665d0cf60a3a692282054b300b226d186074c55bf89220e84d0752
+Transaction hash: 0x2b4ea4e0326539293919ce762802c3d8e359b61e2bcaf9c9cf80ab3e418a632
+
+----------------------------------------------------------------------
+Finished running script deploy_account
+
+2022-09-10T18:01:45UTC - Running script deploy_account
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Finished running script deploy_account

@@ -1,0 +1,96 @@
+
+2022-09-10T17:35:31UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+
+Deploying contract for class ...
+
+----------------------------------------------------------------------
+Finished running script contract_deploy
+
+2022-09-10T17:35:51UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+Declare transaction was sent.
+Contract class hash: 0x68704d18de8ccf71da7c9761ee53efd44dcfcfd512eddfac9c396e7d175e234
+Transaction hash: 0x27325bd6e273638cbec0c5072f2724a434a613ecf5cb2ce19b20db8541e23a8
+Deploying contract for class 0x68704d18de8ccf71da7c9761ee53efd44dcfcfd512eddfac9c396e7d175e234...
+Invoke transaction for contract deployment was sent.
+Contract address: 0x06cde970209c7a93e04e48e0c4096e709cc9eb7fde159b053a89320f86cae28c
+Transaction hash: 0x693d8c37224ad29697de21af1d4e6bbe678dec48b228941b6453721e7f59751
+----------------------------------------------------------------------
+Finished running script contract_deploy
+
+2022-09-10T17:56:42UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+Declare transaction was sent.
+Contract class hash: 0x16439f67f8967b1f61b427eeb78c6ed689a11f41869ff349b6267a6dc80dfef
+Transaction hash: 0x1811cbdd88e6337290bb0e15d45e29d105219094bbf7a3ea4a0c566f54f5b9c
+Deploying contract for class 0x16439f67f8967b1f61b427eeb78c6ed689a11f41869ff349b6267a6dc80dfef...
+Invoke transaction for contract deployment was sent.
+Contract address: 0x0690903536c3a93d5ebddec6632dbd9aab2dabd09518d4f2f281bd750824494b
+Transaction hash: 0x1227e7811a151d2d990991f6367e2f48be3b7a0019ecdd03c4e502fa929753c
+----------------------------------------------------------------------
+Finished running script contract_deploy
+
+2022-09-10T17:59:38UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+
+Deploying contract for class ...
+
+----------------------------------------------------------------------
+Finished running script contract_deploy
+
+2022-09-10T18:01:58UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+Declare transaction was sent.
+Contract class hash: 0x1e48f20c157f50d7b135363d3684785e2e05cc7cccb7ddca3f55a7601328c81
+Transaction hash: 0x2244b9e4a672cea6aad1e2143d162234b448142dd67ed5eb94f08285b53e4f1
+Deploying contract for class 0x1e48f20c157f50d7b135363d3684785e2e05cc7cccb7ddca3f55a7601328c81...
+Invoke transaction for contract deployment was sent.
+Contract address: 0x07c68268c85027aecf570562e36e5e81094825f8250ddfa47ccd6ff2023f1aa1
+Transaction hash: 0x718598b1764ad09e695862014c26a2cbfa7f3fd4b96796d015ac0a4a7e071c4
+----------------------------------------------------------------------
+Finished running script contract_deploy
+
+2022-09-10T18:15:23UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+Declare transaction was sent.
+Contract class hash: 0x1e48f20c157f50d7b135363d3684785e2e05cc7cccb7ddca3f55a7601328c81
+Transaction hash: 0x2244b9e4a672cea6aad1e2143d162234b448142dd67ed5eb94f08285b53e4f1
+Deploying contract for class 0x1e48f20c157f50d7b135363d3684785e2e05cc7cccb7ddca3f55a7601328c81...
+Invoke transaction for contract deployment was sent.
+Contract address: 0x064d46c3494f744e398294430f8b2d4d70eb4cfa4a00e9a64c1c7b6f71e27a25
+Transaction hash: 0x2a50202d4c6936c70f3c604c0f8059f17eab30329b662436b02069a7dd27cc9
+----------------------------------------------------------------------
+Finished running script contract_deploy
+
+2022-09-10T18:23:09UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+Declare transaction was sent.
+Contract class hash: 0x1e48f20c157f50d7b135363d3684785e2e05cc7cccb7ddca3f55a7601328c81
+Transaction hash: 0x4a72708559ad7ec4ac36f1a771d3fc143a0bb94cb31cf4d75a414cd91cc0017
+Deploying contract for class 0x1e48f20c157f50d7b135363d3684785e2e05cc7cccb7ddca3f55a7601328c81...
+Invoke transaction for contract deployment was sent.
+Contract address: 0x0276cc55197528edf17c2a7c098264b4b3ba7e9e013ee96105d2cc79113a82ab
+Transaction hash: 0xd7bff0af0dbc2a54cd6e31d217fbbef760166615d387f6b308085c49b97c31
+----------------------------------------------------------------------
+Finished running script contract_deploy
+
+2022-09-10T18:29:30UTC - Running script contract_deploy
+----------------------------------------------------------------------
+Declaring class...
+Declare transaction was sent.
+Contract class hash: 0x169985f0a6c15c750fa6a1747ddc7fdff2574d5194195968c504e869c187f34
+Transaction hash: 0x7e65d50ed85c40c1c686c13724317e42136923a4ea05ca67eff25a6a4351e13
+Deploying contract for class 0x169985f0a6c15c750fa6a1747ddc7fdff2574d5194195968c504e869c187f34...
+Invoke transaction for contract deployment was sent.
+Contract address: 0x0444e4b908f22905885336ea49c851b0ad4a1e7ab46ebeb79e7bde6611f8dc51
+Transaction hash: 0x441bfde301bfa945c2c3c20e8869e94c1cc30cf66550c3c76e7b20968c43ee8
+----------------------------------------------------------------------
+Finished running script contract_deploy

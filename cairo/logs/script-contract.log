@@ -1,0 +1,44 @@
+
+2022-09-10T17:35:43UTC - Running script contract
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Finished running script contract
+
+2022-09-10T17:56:37UTC - Running script contract
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Finished running script contract
+
+2022-09-10T18:01:38UTC - Running script contract
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Finished running script contract
+
+2022-09-10T18:29:25UTC - Running script contract
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Finished running script contract
+
+2022-09-12T11:13:01UTC - Running script contract
+----------------------------------------------------------------------
+Declaring class...
+Declare transaction was sent.
+Contract class hash: 0x68704d18de8ccf71da7c9761ee53efd44dcfcfd512eddfac9c396e7d175e234
+Transaction hash: 0xcb81e7bf5d1e5b6d2c2547c897f584cb51a5611971d76ae4b615cc607cbfd8
+Deploying contract for class 0x68704d18de8ccf71da7c9761ee53efd44dcfcfd512eddfac9c396e7d175e234...
+Invoke transaction for contract deployment was sent.
+Contract address: 0x033df9698fe7a6c80c25eee8fc081fae0a9f426ea25a3878020f7d544170d4be
+Transaction hash: 0x4d7f1f0bca0aaad0a0d35da732251bacde4c3b01bb6c1c26f54d461da1b9874
+----------------------------------------------------------------------
+Finished running script contract
+
+2022-09-12T11:19:39UTC - Running script contract
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Finished running script contract
+
+2022-09-12T11:20:10UTC - Running script contract
+----------------------------------------------------------------------
+3
+----------------------------------------------------------------------
+Finished running script contract
