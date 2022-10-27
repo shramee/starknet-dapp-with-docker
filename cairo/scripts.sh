@@ -10,7 +10,7 @@ case $RUN_SCRIPT in
 	# Here are some example scripts, edit away as you please.
 
 	"test")
-		# Compile src/test.cairo to build/test.json
+		# Run tests in contract_test.py
 		pytest ./src/contract_test.py
 	;;
 
