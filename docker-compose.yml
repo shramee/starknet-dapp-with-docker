@@ -24,16 +24,12 @@ services:
     command: sh -c "chmod -R +x ./scripts.sh ./run.sh && ./run.sh"
   python-backend:
     build: ./python-backend
-    environment:
-      - RUN_SCRIPT=${RUN_SCRIPT:-test}
     env_file:
       - ./python-backend/.env
     ports:
       - "5000:5000"
     volumes:
       # Code directories
-      - ./python-backend/src:/code/src
-      # Logs and config
-      - ./python-backend/run.log:/code/run.log
+      - ./python-backend:/code
       - ./shared/.starknet_accounts:/root/.starknet_accounts
     command: ["python3", "./src/start.py"]
