@@ -1,4 +1,5 @@
 build/*
-logs/*
+**/logs/*
+python-backend/run.log
 .starknet_accounts/*
 **/__pycache__

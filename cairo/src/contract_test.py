@@ -26,5 +26,6 @@ async def test_increase_balance():
 
     # Check the result of get_balance().
     execution_info = await contract.get_balance().call()
+    print( "Yo sup?", execution_info.result )
     assert execution_info.result == (25,)
-    print( execution_info.result )
+	
