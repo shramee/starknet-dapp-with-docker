@@ -33,3 +33,16 @@ services:
       - ./python-backend:/code
       - ./shared/.starknet_accounts:/root/.starknet_accounts
     command: ["python3", "./src/start.py"]
+  js-backend:
+    build: ./js-backend
+    environment:
+      - RUN_SCRIPT=${RUN_SCRIPT:-test}
+    env_file:
+      - ./js-backend/.env
+    ports:
+      - "4000:4000"
+    volumes:
+      # Code directories
+      - ./js-backend:/code
+      - ./shared/.starknet_accounts:/root/.starknet_accounts
+    command: ["npm", "start"]
