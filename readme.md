@@ -7,22 +7,16 @@ Uses docker-compose to set up containers to build, test, run, deploy and serve s
 1. [`./cairo`](cairo) - A cairo dev environment to build/run cairo and deploy starknet contracts.
 2. [`./python-backend`](python-backend) - Python environment with cairo and starknet ready.
 3. [`./js-backend`](js-backend) - NodeJS backend with Python3 and cairo ready for invoking with CLI.
-4. [`./frontend`](frontend) - Frontend, run something like, `npx create-react-app frontend`.
+4. [`./frontend`](frontend) - Frontend, runs npm package in `./frontend`.
 
-## Setting up Frontend
+## Prepare Frontend
 
-Put your frontend npm/yarn package in `./frontend` dir and the files will be available and run from inside the container.
+Replace the contents in `./frontend` dir with your frontend NPM package and the files will be available and run from inside the container.
 
-Example with React:
+Example with React CRA:
 
 ```bash
 npx create-react-app frontend
-```
-
-Or with a template,
-
-```bash
-npx create-react-app frontend --template p12
 ```
 
 ## Setting up
@@ -31,4 +25,7 @@ npx create-react-app frontend --template p12
 1. Clone the repo. Or download zip file and extract.
 2. Run `docker-compose up` in the directory in terminal.
 3. This should spin up backends and frontend.
-4. Cairo is more of an on demand container, and can be run with `docker-compose up cairo` or `RUN_SCRIPT=script_name docker-compose up cairo`, See [./cairo](cairo) for more details.
+
+Cairo is more of an on demand container, and can be run with `docker-compose up cairo` or `RUN_SCRIPT=script_name docker-compose up cairo`, See [./cairo](cairo) for more details.
+
+Change command in `compose.yml` as needed. Comment out/Delete unused service(s).
