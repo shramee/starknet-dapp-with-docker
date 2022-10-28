@@ -1,4 +1,4 @@
-# starknet-web3-dapp-boilerplate
+# starknet-web3-dapp
 
 Uses docker-compose to set up containers to build, test, run, deploy and serve stuff for your Starknet dapp.
 
