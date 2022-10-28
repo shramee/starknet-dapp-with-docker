@@ -42,6 +42,9 @@ services:
       - ./js-backend:/code
       - ./shared/.starknet_accounts:/root/.starknet_accounts
     command: sh -c "npm install && npm start"
+    networks:
+      - mongo-network
+
   python-backend:
     build: ./python-backend
     env_file:
@@ -53,6 +56,8 @@ services:
       - ./python-backend:/code
       - ./shared/.starknet_accounts:/root/.starknet_accounts
     command: ["python3", "./src/start.py"]
+    networks:
+      - mongo-network
 
   #  █▀▀ █▀█ █▀█ █▄ █ ▀█▀ █▀▀ █▄ █ █▀▄
   #  █▀  █▀▄ █▄█ █ ▀█  █  ██▄ █ ▀█ █▄▀
@@ -69,3 +74,22 @@ services:
       # Code directories
       - ./frontend:/home/node/app
     command: sh -c "npm install && npm start"
+
+  # █▀▄ ▄▀█ ▀█▀ ▄▀█ █▄▄ ▄▀█ █▀ █▀▀
+  # █▄▀ █▀█  █  █▀█ █▄█ █▀█ ▄█ ██▄
+  # Mongo DB service
+
+  mongo:
+    container_name: mongo
+    restart: always
+    image: mongo
+    command: mongod --port 27018
+    volumes:
+      - ./_data/db:/data/db
+    networks:
+      - mongo-network
+    expose:
+      - 27018
+
+networks:
+  mongo-network:
