@@ -8,6 +8,10 @@ if [ $1 ];
 	then RUN_SCRIPT=$1;
 fi
 LOG_FILE="./logs/script-$RUN_SCRIPT.log"
+
+mkdir ./logs
+touch $LOG_FILE
+
 HR="----------------------------------------------------------------------"
 DATE=$(date +'%Y-%m-%dT%H:%M:%S%Z')
 
