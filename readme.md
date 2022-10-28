@@ -7,7 +7,7 @@ Uses docker-compose to set up containers to build, test, run, deploy and serve s
 1. [`./cairo`](cairo) - A cairo dev environment to build/run cairo and deploy starknet contracts.
 2. [`./python-backend`](python-backend) - Python environment with cairo and starknet ready.
 3. [`./js-backend`](js-backend) - NodeJS backend with Python3 and cairo ready for invoking with CLI.
-4. [`./frontend`](frontend) - Frontend, runs npm package in `./frontend`.
+4. [`./frontend`](frontend) - Frontend, runs npm package in `./frontend`. Includes `gh-pages` for quick deployment to GitHub pages.
 
 ## Prepare Frontend
 
