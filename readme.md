@@ -1,6 +1,7 @@
-# starknet-web3-dapp-with-docker
+# starknet-dapp-with-docker
 
-Uses docker-compose to set up containers to build, test, run, deploy and serve stuff for your Starknet dapp.
+#### Bootstrap your Starknet Web3 dApp development in a fully dockerized environment.
+Uses `docker-compose` to set up containers to build, test, run, deploy and serve stuff for your Starknet dapp.
 
 ## Services
 
