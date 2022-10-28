@@ -6,7 +6,6 @@ COPY ./requirements.txt ./requirements.txt
 COPY ./run.sh ./run.sh
 COPY ./scripts.sh ./scripts.sh
 COPY ./src ./src
-COPY ./logs ./logs
 COPY ./libs ./libs
 
 ENV CAIRO_PATH=/code/libs:/tmp/cairo_libs
